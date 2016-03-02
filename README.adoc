@@ -1,0 +1,96 @@
+= Gradle Linters Plugin
+
+Adds support for linting code in a bunch of front end languages including Javascript, HTML, CSS and Less.
+
+== Getting Started
+
+[source,gradle]
+----
+plugins {
+  id 'com.github.rahulsom.linters' version '0.1'
+}
+----
+
+== Configuration
+
+[source,gradle]
+----
+linters {
+  jscs = true
+  htmlcs = true
+  jshint = true
+  stylelint = true
+
+  jsIncludes  = ['src/assets/**/*.js']
+  jsExcludes  = ['src/assets/bower/**']
+  htmlIncludes = ['src/assets/**/*.html']
+  htmlExcludes = ['src/assets/bower/**']
+  stylesIncludes = ['src/assets/**/*.less', 'src/assets/**/*.css']
+  stylesExcludes = ['src/assets/bower/**']
+
+  format = 'checkstyle' // or 'text'
+}
+----
+
+|===
+| parameter | description | default
+
+| jscs
+| run jscs (boolean)
+| true
+
+| html
+| run htmlcs (boolean)
+| true
+
+| jshint
+| run jshint (boolean)
+| true
+
+| stylelint
+| run stylelint (boolean)
+| true
+
+| format
+a| output format for linters (`'text'` or `'checkstyle'`)
+| `'text'`
+
+| jsIncludes
+| Glob pattern to include as javascript sources
+| `['src/assets/**/*.js']`
+
+| jsExcludes
+| Glob pattern to exclude as javascript sources
+| `['src/assets/bower/**']`
+
+| htmlIncludes
+| Glob pattern to include as html sources
+| `['src/assets/**/*.html']`
+
+| htmlExcludes
+| Glob pattern to exclude as html sources
+| `['src/assets/bower/**']`
+
+| stylesIncludes
+| Glob pattern to include as styles sources
+| `['src/assets/**/*.less', 'src/assets/**/*.css']`
+
+| stylesExcludes
+| Glob pattern to exclude as styles sources
+| `['src/assets/bower/**']`
+
+|===
+
+== Usage
+
+It adds the following tasks to your module
+
+* `htmlcs` - Runs htmlcs on all html files matched. Checks rules from `.htmlcsrc`
+* `htmlcsFix` - Fixes code with best effort on all html files matched
+* `jscs` - Runs jscs on all javascript files matched. Checks rules from `.jscsrc`
+* `jscsFix` - Fixes code with best effort on all javascript files matched
+* `jshint` - Runs jshint on all javascript files matched. Checks rules from `.jshintrc`
+* `stylelint` - Runs stylelint on all styles files matched. Checks rules from `.stylelintrc`
+
+All these tasks will create a default `rc` file of the name if they don't find one.
+You might not like the defaults though, so please tweak those and commit them to version control.

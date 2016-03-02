@@ -1,0 +1,61 @@
+buildscript {
+    dependencies {
+        classpath 'org.codehaus.groovy:groovy-all:2.4.4'
+    }
+}
+
+plugins {
+    id 'groovy'
+    id 'maven-publish'
+    id 'com.gradle.plugin-publish' version '0.9.1'
+    id 'nebula.provided-base' version '3.0.3'
+}
+
+targetCompatibility = 1.6
+
+repositories {
+    mavenLocal()
+    jcenter()
+    mavenCentral()
+}
+
+group='com.github.rahulsom'
+version='0.1'
+
+ext {
+    artifactId = 'linters'
+}
+
+dependencies {
+    compile gradleApi()
+    compile 'org.codehaus.groovy:groovy-all:2.4.4'
+    compile 'com.moowork.gradle:gradle-node-plugin:0.11'
+    testCompile 'org.spockframework:spock-core:0.7-groovy-2.0'
+}
+
+pluginBundle {
+    website = 'https://github.com/rahulsom/linters'
+    vcsUrl = 'https://github.com/rahulsom/linters'
+    description = 'Lints javascript, lesscss and html code.'
+    tags = ['jshint', 'jscs', 'stylelint', 'htmlcs']
+
+    plugins {
+        lintersPlugin {
+            id = 'com.github.rahulsom.linters'
+            displayName = 'Gradle Linters Plugin'
+        }
+    }
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            artifactId project.artifactId
+            from components.java
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.11'
+}
