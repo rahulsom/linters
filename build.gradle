@@ -20,7 +20,7 @@ repositories {
 }
 
 group='com.github.rahulsom'
-version='0.1'
+version='0.1.1'
 
 ext {
     artifactId = 'linters'
