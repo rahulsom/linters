@@ -7,9 +7,15 @@ Adds support for linting code in a bunch of front end languages including Javasc
 [source,gradle]
 ----
 plugins {
-  id 'com.github.rahulsom.linters' version '0.1'
+  id 'com.github.rahulsom.linters' version '0.2'
 }
 ----
+
+== Versions
+
+0.1:: **Deprecated.** Initial version.
+0.1.1:: Pins version numbers of npm packages. Supports Node 0.12.
+0.2:: Uses more recent npm packages. No support for Node 0.12.
 
 == Configuration
 
