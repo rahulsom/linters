@@ -52,7 +52,7 @@ class LintersPlugin implements Plugin<Project> {
     private static void createInstallTask(Project project, Closure nodeExecOverrides) {
         npmTask(project, 'installLinters', dependsOn: 'lintersInit', group: null,
                 description: 'Installs dependencies needed for the jscs.') {
-            args = ['install', 'jscs', 'stylelint', 'htmlcs', 'jshint']
+            args = ['install', 'jscs@3.0.7', 'stylelint@7.7.1', 'htmlcs@0.2.9', 'jshint@2.9.4']
             outputs.dir project.file(NPM_OUTPUT_PATH)
             execOverrides = nodeExecOverrides
         }
