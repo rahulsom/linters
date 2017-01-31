@@ -58,32 +58,60 @@ linters {
 | true
 
 | format
-a| output format for linters (`'text'` or `'checkstyle'`)
-| `'text'`
+| output format for linters (`'text'` or `'checkstyle'`)
+a|
+[source,groovy]
+----
+'text'
+----
 
 | jsIncludes
 | Glob pattern to include as javascript sources
-| `['src/assets/**/*.js']`
+a|
+[source,groovy]
+----
+['src/assets/**/*.js']
+----
 
 | jsExcludes
 | Glob pattern to exclude as javascript sources
-| `['src/assets/bower/**']`
+a|
+[source,groovy]
+----
+['src/assets/bower/**']
+----
 
 | htmlIncludes
 | Glob pattern to include as html sources
-| `['src/assets/**/*.html']`
+a|
+[source,groovy]
+----
+['src/assets/**/*.html']
+----
 
 | htmlExcludes
 | Glob pattern to exclude as html sources
-| `['src/assets/bower/**']`
+a|
+[source,groovy]
+----
+['src/assets/bower/**']
+----
 
 | stylesIncludes
 | Glob pattern to include as styles sources
-| `['src/assets/**/*.less', 'src/assets/**/*.css']`
+a|
+[source,groovy]
+----
+['src/assets/**/*.less', 'src/assets/**/*.css']
+----
 
 | stylesExcludes
 | Glob pattern to exclude as styles sources
-| `['src/assets/bower/**']`
+a|
+[source,groovy]
+----
+['src/assets/bower/**']
+----
 
 |===
 
