@@ -39,7 +39,7 @@ class StylelintUtil {
                 args = list
             }
             ignoreExitValue = true
-            script = project.file('node_modules/stylelint/bin/stylelint.js')
+            script = project.file('node_modules/stylelint/dist/cli.js')
         }
     }
 
