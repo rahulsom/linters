@@ -7,7 +7,7 @@ buildscript {
 plugins {
     id 'groovy'
     id 'maven-publish'
-    id 'com.gradle.plugin-publish' version '0.9.1'
+    id 'com.gradle.plugin-publish' version '0.10.1'
     id 'nebula.provided-base' version '3.0.3'
 }
 
